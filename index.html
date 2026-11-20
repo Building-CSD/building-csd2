@@ -324,9 +324,30 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid #D2A5
 (function () {
   var v = document.querySelector('video');
   if (v) {
-    v.muted = true;
-    if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) v.pause();
-    else { var p = v.play && v.play(); if (p && p.catch) p.catch(function () {}); }
+    // Phones (iOS Safari especially) only autoplay a video that is muted and
+    // inline, and Low Power Mode can still block it. Set everything as both
+    // properties and attributes, retry once data arrives, and fall back to
+    // starting on the visitor's first tap or scroll.
+    v.muted = true; v.defaultMuted = true; v.playsInline = true;
+    v.setAttribute('muted', ''); v.setAttribute('playsinline', '');
+    v.setAttribute('webkit-playsinline', ''); v.setAttribute('preload', 'auto');
+    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var tryPlay = function () {
+      if (reduce || !v.paused) return;
+      var p = v.play && v.play(); if (p && p.catch) p.catch(function () {});
+    };
+    if (reduce) v.pause();
+    else {
+      tryPlay();
+      v.addEventListener('loadeddata', tryPlay);
+      v.addEventListener('canplay', tryPlay);
+      document.addEventListener('visibilitychange', function () { if (!document.hidden) tryPlay(); });
+      var kick = function () {
+        tryPlay();
+        ['touchstart', 'touchend', 'click', 'scroll'].forEach(function (e) { window.removeEventListener(e, kick); });
+      };
+      ['touchstart', 'touchend', 'click', 'scroll'].forEach(function (e) { window.addEventListener(e, kick, { passive: true }); });
+    }
   }
   var tiles = [].slice.call(document.querySelectorAll('[data-tile]'));
   var open = -1;
