@@ -1,0 +1,377 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Student Groups, layout A: search and cards</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&amp;family=Hanken+Grotesk:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#EEF0EC;color:#2B3140;font-family:'Hanken Grotesk',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:#1F2A44}a:hover{color:#7E5A1A}summary::-webkit-details-marker{display:none}summary:focus-visible{outline:3px solid #D2A54A;outline-offset:3px}.csd-menu{display:none}@media (max-width: 860px){.csd-links{display:none !important}.csd-menu{display:block}}
+a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid #D2A54A;outline-offset:3px}
+</style>
+</head>
+<body id="top">
+<div style="font-family: 'Hanken Grotesk', system-ui, sans-serif; color: #2B3140; background: #EEF0EC">
+
+  <!-- HEADER -->
+  <header style="background: #1F2A44; color: #FFFFFF">
+    <nav aria-label="Main" style="position: relative; z-index: 5; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 20px 40px; padding: 28px clamp(20px, 5vw, 72px)">
+      <a href="index.html" style="color: #FFFFFF; text-decoration: none; font-family: 'Cormorant Garamond', Georgia, serif; font-size: 22px; font-weight: 600; line-height: 1.05; letter-spacing: 0.01em">CSD</a>
+      <div class="csd-links" style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px 32px; font-size: 15px; font-weight: 500">
+        <a href="our-space.html" style="color: #FFFFFF; text-decoration: none; padding: 12px 0">Our Space</a>
+        <a href="events.html" style="color: #FFFFFF; text-decoration: none; padding: 12px 0">Events</a>
+        <a href="#top" aria-current="page" style="color: #D2A54A; text-decoration: none; padding: 12px 0; border-bottom: 2px solid #D2A54A">Student Groups</a>
+        <a href="host-with-us.html" style="color: #FFFFFF; text-decoration: none; padding: 12px 0">Host with us</a>
+        <a href="our-team.html" style="color: #FFFFFF; text-decoration: none; padding: 12px 0">Our Team</a>
+        <a href="support-us.html" style="color: #1F2A44; background: #D2A54A; text-decoration: none; padding: 12px 20px; border-radius: 999px; font-weight: 600">Support us</a>
+      </div>
+      <details class="csd-menu" style="position: relative">
+        <summary style="display: flex; align-items: center; gap: 10px; min-height: 44px; padding: 0 18px; border-radius: 999px; border: 1px solid rgba(255,255,255,0.55); color: #FFFFFF; font-size: 15px; font-weight: 600; cursor: pointer; list-style: none"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"></path></svg>Menu</summary>
+        <div style="position: absolute; right: 0; top: calc(100% + 10px); z-index: 30; width: min(300px, 86vw); display: flex; flex-direction: column; padding: 10px; border-radius: 14px; background: #FFFFFF; box-shadow: 0 20px 48px rgba(20,28,48,0.32); font-size: 17px; font-weight: 500">
+          <a href="our-space.html" style="padding: 14px 16px; border-radius: 10px; color: #1F2A44; text-decoration: none">Our Space</a>
+          <a href="events.html" style="padding: 14px 16px; border-radius: 10px; color: #1F2A44; text-decoration: none">Events</a>
+          <a href="#top" style="padding: 14px 16px; border-radius: 10px; color: #1F2A44; text-decoration: none; background: #EEF0EC; font-weight: 600">Student Groups</a>
+          <a href="host-with-us.html" style="padding: 14px 16px; border-radius: 10px; color: #1F2A44; text-decoration: none">Host with us</a>
+          <a href="our-team.html" style="padding: 14px 16px; border-radius: 10px; color: #1F2A44; text-decoration: none">Our Team</a>
+          <a href="support-us.html" style="margin-top: 6px; padding: 14px 16px; border-radius: 999px; background: #D2A54A; color: #1F2A44; text-decoration: none; font-weight: 600; text-align: center">Support us</a>
+        </div>
+      </details>
+    </nav>
+    <div style="max-width: 1296px; margin: 0 auto; padding: clamp(48px, 6vw, 88px) clamp(20px, 5vw, 72px) clamp(56px, 6vw, 88px); display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 24px 48px">
+      <div style="flex: 1 1 520px">
+        <h1 style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 500; font-size: clamp(52px, 6vw, 88px); line-height: 0.95; letter-spacing: -0.015em">Student Groups</h1>
+        <p style="margin: 20px 0 0; max-width: 520px; font-size: 19px; line-height: 1.55; color: #C9CFDB">Spiritual, religious and mindfulness groups at Cal. Find your people.</p>
+      </div>
+      <a href="#add" style="color: #1F2A44; background: #FFFFFF; text-decoration: none; padding: 15px 28px; border-radius: 999px; font-size: 16px; font-weight: 600">Add your group</a>
+    </div>
+  </header>
+
+  <main style="padding: 40px clamp(20px, 5vw, 72px) clamp(72px, 8vw, 112px)">
+    <div style="max-width: 1296px; margin: 0 auto">
+
+      <!-- SEARCH + FILTERS -->
+      <div style="display: flex; flex-direction: column; gap: 20px; margin-bottom: 40px">
+        <div style="position: relative; max-width: 520px">
+          <label for="ga-search" style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0)">Search groups</label>
+          <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#6B7282" stroke-width="2" stroke-linecap="round" style="position: absolute; left: 20px; top: 18px"><circle cx="11" cy="11" r="7"></circle><path d="M20 20l-3.5-3.5"></path></svg>
+          <input id="ga-search" type="search" placeholder="Search by name or tradition" style="width: 100%; height: 56px; box-sizing: border-box; padding: 0 22px 0 52px; border-radius: 999px; border: 1px solid #C3C9C0; background: #FFFFFF; color: #1F2A44; font: inherit; font-size: 17px">
+        </div>
+        <div role="group" aria-label="Filter by tradition" style="display: flex; flex-wrap: wrap; gap: 8px">
+          
+            <button type="button" data-cat="All" aria-pressed="true" style="height: 44px; padding: 0 18px; border-radius: 999px; border: 1px solid #1F2A44; background: #1F2A44; color: #FFFFFF; font: inherit; font-size: 15px; font-weight: 500; cursor: pointer">All</button>
+          
+            <button type="button" data-cat="Buddhist" aria-pressed="false" style="height: 44px; padding: 0 18px; border-radius: 999px; border: 1px solid #C3C9C0; background: #FFFFFF; color: #1F2A44; font: inherit; font-size: 15px; font-weight: 500; cursor: pointer">Buddhist</button>
+          
+            <button type="button" data-cat="Christian" aria-pressed="false" style="height: 44px; padding: 0 18px; border-radius: 999px; border: 1px solid #C3C9C0; background: #FFFFFF; color: #1F2A44; font: inherit; font-size: 15px; font-weight: 500; cursor: pointer">Christian</button>
+          
+            <button type="button" data-cat="Hindu" aria-pressed="false" style="height: 44px; padding: 0 18px; border-radius: 999px; border: 1px solid #C3C9C0; background: #FFFFFF; color: #1F2A44; font: inherit; font-size: 15px; font-weight: 500; cursor: pointer">Hindu</button>
+          
+            <button type="button" data-cat="Jewish" aria-pressed="false" style="height: 44px; padding: 0 18px; border-radius: 999px; border: 1px solid #C3C9C0; background: #FFFFFF; color: #1F2A44; font: inherit; font-size: 15px; font-weight: 500; cursor: pointer">Jewish</button>
+          
+            <button type="button" data-cat="Muslim" aria-pressed="false" style="height: 44px; padding: 0 18px; border-radius: 999px; border: 1px solid #C3C9C0; background: #FFFFFF; color: #1F2A44; font: inherit; font-size: 15px; font-weight: 500; cursor: pointer">Muslim</button>
+          
+            <button type="button" data-cat="Sikh" aria-pressed="false" style="height: 44px; padding: 0 18px; border-radius: 999px; border: 1px solid #C3C9C0; background: #FFFFFF; color: #1F2A44; font: inherit; font-size: 15px; font-weight: 500; cursor: pointer">Sikh</button>
+          
+            <button type="button" data-cat="Interfaith" aria-pressed="false" style="height: 44px; padding: 0 18px; border-radius: 999px; border: 1px solid #C3C9C0; background: #FFFFFF; color: #1F2A44; font: inherit; font-size: 15px; font-weight: 500; cursor: pointer">Interfaith</button>
+          
+            <button type="button" data-cat="Mindfulness" aria-pressed="false" style="height: 44px; padding: 0 18px; border-radius: 999px; border: 1px solid #C3C9C0; background: #FFFFFF; color: #1F2A44; font: inherit; font-size: 15px; font-weight: 500; cursor: pointer">Mindfulness</button>
+          
+            <button type="button" data-cat="Secular" aria-pressed="false" style="height: 44px; padding: 0 18px; border-radius: 999px; border: 1px solid #C3C9C0; background: #FFFFFF; color: #1F2A44; font: inherit; font-size: 15px; font-weight: 500; cursor: pointer">Secular</button>
+          
+            <button type="button" data-cat="Other traditions" aria-pressed="false" style="height: 44px; padding: 0 18px; border-radius: 999px; border: 1px solid #C3C9C0; background: #FFFFFF; color: #1F2A44; font: inherit; font-size: 15px; font-weight: 500; cursor: pointer">Other traditions</button>
+          
+        </div>
+        <p id="ga-count" aria-live="polite" style="margin: 0; font-size: 15px; color: #5A6172">12 groups</p>
+      </div>
+
+      <!-- GRID -->
+      <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px">
+        
+          <article data-trad="Buddhist" data-text="Buddhist Sangha Buddhist Weekly sitting and dharma talks." style="display: flex; flex-direction: column; gap: 14px; padding: 28px; border-radius: 12px; background: #FFFFFF">
+            <div style="display: flex; align-items: center; gap: 14px">
+              <span aria-hidden="true" style="flex: 0 0 52px; width: 52px; height: 52px; border-radius: 10px; background: #1F2A44; color: #D2A54A; display: flex; align-items: center; justify-content: center; font-family: 'Cormorant Garamond', Georgia, serif; font-size: 22px; font-weight: 600">BS</span>
+              <span style="font-size: 14px; font-weight: 600; color: #2F5546; background: #E7EEEA; padding: 5px 10px; border-radius: 6px">Buddhist</span>
+            </div>
+            <h2 style="margin: 4px 0 0; font-size: 21px; font-weight: 600; line-height: 1.25; color: #1F2A44">Buddhist Sangha</h2>
+            <p style="margin: 0; font-size: 16px; line-height: 1.55">Weekly sitting and dharma talks.</p>
+            <p style="margin: auto 0 0; padding-top: 12px; display: flex; align-items: center; gap: 8px; font-size: 15px; color: #5A6172">
+              <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg>
+              Tuesdays, 7 PM
+            </p>
+            <div style="display: flex; gap: 20px; padding-top: 14px; border-top: 1px solid #E6E8E3; font-size: 15px; font-weight: 600">
+              <a href="#instagram" style="color: #1F2A44; padding: 6px 0">Instagram</a>
+              <a href="#email" style="color: #1F2A44; padding: 6px 0">Email</a>
+            </div>
+          </article>
+        
+          <article data-trad="Christian" data-text="Christian Fellowship Christian Bible study, worship and shared dinners." style="display: flex; flex-direction: column; gap: 14px; padding: 28px; border-radius: 12px; background: #FFFFFF">
+            <div style="display: flex; align-items: center; gap: 14px">
+              <span aria-hidden="true" style="flex: 0 0 52px; width: 52px; height: 52px; border-radius: 10px; background: #1F2A44; color: #D2A54A; display: flex; align-items: center; justify-content: center; font-family: 'Cormorant Garamond', Georgia, serif; font-size: 22px; font-weight: 600">CF</span>
+              <span style="font-size: 14px; font-weight: 600; color: #2F5546; background: #E7EEEA; padding: 5px 10px; border-radius: 6px">Christian</span>
+            </div>
+            <h2 style="margin: 4px 0 0; font-size: 21px; font-weight: 600; line-height: 1.25; color: #1F2A44">Christian Fellowship</h2>
+            <p style="margin: 0; font-size: 16px; line-height: 1.55">Bible study, worship and shared dinners.</p>
+            <p style="margin: auto 0 0; padding-top: 12px; display: flex; align-items: center; gap: 8px; font-size: 15px; color: #5A6172">
+              <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg>
+              Thursdays, 7 PM
+            </p>
+            <div style="display: flex; gap: 20px; padding-top: 14px; border-top: 1px solid #E6E8E3; font-size: 15px; font-weight: 600">
+              <a href="#instagram" style="color: #1F2A44; padding: 6px 0">Instagram</a>
+              <a href="#email" style="color: #1F2A44; padding: 6px 0">Email</a>
+            </div>
+          </article>
+        
+          <article data-trad="Christian" data-text="Catholic Student Community Christian Mass, retreats and service projects." style="display: flex; flex-direction: column; gap: 14px; padding: 28px; border-radius: 12px; background: #FFFFFF">
+            <div style="display: flex; align-items: center; gap: 14px">
+              <span aria-hidden="true" style="flex: 0 0 52px; width: 52px; height: 52px; border-radius: 10px; background: #1F2A44; color: #D2A54A; display: flex; align-items: center; justify-content: center; font-family: 'Cormorant Garamond', Georgia, serif; font-size: 22px; font-weight: 600">CS</span>
+              <span style="font-size: 14px; font-weight: 600; color: #2F5546; background: #E7EEEA; padding: 5px 10px; border-radius: 6px">Christian</span>
+            </div>
+            <h2 style="margin: 4px 0 0; font-size: 21px; font-weight: 600; line-height: 1.25; color: #1F2A44">Catholic Student Community</h2>
+            <p style="margin: 0; font-size: 16px; line-height: 1.55">Mass, retreats and service projects.</p>
+            <p style="margin: auto 0 0; padding-top: 12px; display: flex; align-items: center; gap: 8px; font-size: 15px; color: #5A6172">
+              <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg>
+              Sundays, 5 PM
+            </p>
+            <div style="display: flex; gap: 20px; padding-top: 14px; border-top: 1px solid #E6E8E3; font-size: 15px; font-weight: 600">
+              <a href="#instagram" style="color: #1F2A44; padding: 6px 0">Instagram</a>
+              <a href="#email" style="color: #1F2A44; padding: 6px 0">Email</a>
+            </div>
+          </article>
+        
+          <article data-trad="Hindu" data-text="Hindu Students Council Hindu Festivals, bhajans and Gita discussion." style="display: flex; flex-direction: column; gap: 14px; padding: 28px; border-radius: 12px; background: #FFFFFF">
+            <div style="display: flex; align-items: center; gap: 14px">
+              <span aria-hidden="true" style="flex: 0 0 52px; width: 52px; height: 52px; border-radius: 10px; background: #1F2A44; color: #D2A54A; display: flex; align-items: center; justify-content: center; font-family: 'Cormorant Garamond', Georgia, serif; font-size: 22px; font-weight: 600">HS</span>
+              <span style="font-size: 14px; font-weight: 600; color: #2F5546; background: #E7EEEA; padding: 5px 10px; border-radius: 6px">Hindu</span>
+            </div>
+            <h2 style="margin: 4px 0 0; font-size: 21px; font-weight: 600; line-height: 1.25; color: #1F2A44">Hindu Students Council</h2>
+            <p style="margin: 0; font-size: 16px; line-height: 1.55">Festivals, bhajans and Gita discussion.</p>
+            <p style="margin: auto 0 0; padding-top: 12px; display: flex; align-items: center; gap: 8px; font-size: 15px; color: #5A6172">
+              <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg>
+              Every other Friday
+            </p>
+            <div style="display: flex; gap: 20px; padding-top: 14px; border-top: 1px solid #E6E8E3; font-size: 15px; font-weight: 600">
+              <a href="#instagram" style="color: #1F2A44; padding: 6px 0">Instagram</a>
+              <a href="#email" style="color: #1F2A44; padding: 6px 0">Email</a>
+            </div>
+          </article>
+        
+          <article data-trad="Jewish" data-text="Jewish Student Community Jewish Shabbat dinners, holidays and learning." style="display: flex; flex-direction: column; gap: 14px; padding: 28px; border-radius: 12px; background: #FFFFFF">
+            <div style="display: flex; align-items: center; gap: 14px">
+              <span aria-hidden="true" style="flex: 0 0 52px; width: 52px; height: 52px; border-radius: 10px; background: #1F2A44; color: #D2A54A; display: flex; align-items: center; justify-content: center; font-family: 'Cormorant Garamond', Georgia, serif; font-size: 22px; font-weight: 600">JS</span>
+              <span style="font-size: 14px; font-weight: 600; color: #2F5546; background: #E7EEEA; padding: 5px 10px; border-radius: 6px">Jewish</span>
+            </div>
+            <h2 style="margin: 4px 0 0; font-size: 21px; font-weight: 600; line-height: 1.25; color: #1F2A44">Jewish Student Community</h2>
+            <p style="margin: 0; font-size: 16px; line-height: 1.55">Shabbat dinners, holidays and learning.</p>
+            <p style="margin: auto 0 0; padding-top: 12px; display: flex; align-items: center; gap: 8px; font-size: 15px; color: #5A6172">
+              <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg>
+              Fridays, 6 PM
+            </p>
+            <div style="display: flex; gap: 20px; padding-top: 14px; border-top: 1px solid #E6E8E3; font-size: 15px; font-weight: 600">
+              <a href="#instagram" style="color: #1F2A44; padding: 6px 0">Instagram</a>
+              <a href="#email" style="color: #1F2A44; padding: 6px 0">Email</a>
+            </div>
+          </article>
+        
+          <article data-trad="Muslim" data-text="Muslim Students Association Muslim Jumu’ah, halaqas and community events." style="display: flex; flex-direction: column; gap: 14px; padding: 28px; border-radius: 12px; background: #FFFFFF">
+            <div style="display: flex; align-items: center; gap: 14px">
+              <span aria-hidden="true" style="flex: 0 0 52px; width: 52px; height: 52px; border-radius: 10px; background: #1F2A44; color: #D2A54A; display: flex; align-items: center; justify-content: center; font-family: 'Cormorant Garamond', Georgia, serif; font-size: 22px; font-weight: 600">MS</span>
+              <span style="font-size: 14px; font-weight: 600; color: #2F5546; background: #E7EEEA; padding: 5px 10px; border-radius: 6px">Muslim</span>
+            </div>
+            <h2 style="margin: 4px 0 0; font-size: 21px; font-weight: 600; line-height: 1.25; color: #1F2A44">Muslim Students Association</h2>
+            <p style="margin: 0; font-size: 16px; line-height: 1.55">Jumu’ah, halaqas and community events.</p>
+            <p style="margin: auto 0 0; padding-top: 12px; display: flex; align-items: center; gap: 8px; font-size: 15px; color: #5A6172">
+              <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg>
+              Fridays, 1 PM
+            </p>
+            <div style="display: flex; gap: 20px; padding-top: 14px; border-top: 1px solid #E6E8E3; font-size: 15px; font-weight: 600">
+              <a href="#instagram" style="color: #1F2A44; padding: 6px 0">Instagram</a>
+              <a href="#email" style="color: #1F2A44; padding: 6px 0">Email</a>
+            </div>
+          </article>
+        
+          <article data-trad="Sikh" data-text="Sikh Students Association Sikh Kirtan, langar and seva." style="display: flex; flex-direction: column; gap: 14px; padding: 28px; border-radius: 12px; background: #FFFFFF">
+            <div style="display: flex; align-items: center; gap: 14px">
+              <span aria-hidden="true" style="flex: 0 0 52px; width: 52px; height: 52px; border-radius: 10px; background: #1F2A44; color: #D2A54A; display: flex; align-items: center; justify-content: center; font-family: 'Cormorant Garamond', Georgia, serif; font-size: 22px; font-weight: 600">SS</span>
+              <span style="font-size: 14px; font-weight: 600; color: #2F5546; background: #E7EEEA; padding: 5px 10px; border-radius: 6px">Sikh</span>
+            </div>
+            <h2 style="margin: 4px 0 0; font-size: 21px; font-weight: 600; line-height: 1.25; color: #1F2A44">Sikh Students Association</h2>
+            <p style="margin: 0; font-size: 16px; line-height: 1.55">Kirtan, langar and seva.</p>
+            <p style="margin: auto 0 0; padding-top: 12px; display: flex; align-items: center; gap: 8px; font-size: 15px; color: #5A6172">
+              <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg>
+              Monthly
+            </p>
+            <div style="display: flex; gap: 20px; padding-top: 14px; border-top: 1px solid #E6E8E3; font-size: 15px; font-weight: 600">
+              <a href="#instagram" style="color: #1F2A44; padding: 6px 0">Instagram</a>
+              <a href="#email" style="color: #1F2A44; padding: 6px 0">Email</a>
+            </div>
+          </article>
+        
+          <article data-trad="Interfaith" data-text="Interfaith Council Interfaith Honest dialogue across traditions." style="display: flex; flex-direction: column; gap: 14px; padding: 28px; border-radius: 12px; background: #FFFFFF">
+            <div style="display: flex; align-items: center; gap: 14px">
+              <span aria-hidden="true" style="flex: 0 0 52px; width: 52px; height: 52px; border-radius: 10px; background: #1F2A44; color: #D2A54A; display: flex; align-items: center; justify-content: center; font-family: 'Cormorant Garamond', Georgia, serif; font-size: 22px; font-weight: 600">IC</span>
+              <span style="font-size: 14px; font-weight: 600; color: #2F5546; background: #E7EEEA; padding: 5px 10px; border-radius: 6px">Interfaith</span>
+            </div>
+            <h2 style="margin: 4px 0 0; font-size: 21px; font-weight: 600; line-height: 1.25; color: #1F2A44">Interfaith Council</h2>
+            <p style="margin: 0; font-size: 16px; line-height: 1.55">Honest dialogue across traditions.</p>
+            <p style="margin: auto 0 0; padding-top: 12px; display: flex; align-items: center; gap: 8px; font-size: 15px; color: #5A6172">
+              <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg>
+              Wednesdays, 6 PM
+            </p>
+            <div style="display: flex; gap: 20px; padding-top: 14px; border-top: 1px solid #E6E8E3; font-size: 15px; font-weight: 600">
+              <a href="#instagram" style="color: #1F2A44; padding: 6px 0">Instagram</a>
+              <a href="#email" style="color: #1F2A44; padding: 6px 0">Email</a>
+            </div>
+          </article>
+        
+          <article data-trad="Mindfulness" data-text="Mindfulness Club Mindfulness Secular meditation for focus and calm." style="display: flex; flex-direction: column; gap: 14px; padding: 28px; border-radius: 12px; background: #FFFFFF">
+            <div style="display: flex; align-items: center; gap: 14px">
+              <span aria-hidden="true" style="flex: 0 0 52px; width: 52px; height: 52px; border-radius: 10px; background: #1F2A44; color: #D2A54A; display: flex; align-items: center; justify-content: center; font-family: 'Cormorant Garamond', Georgia, serif; font-size: 22px; font-weight: 600">MC</span>
+              <span style="font-size: 14px; font-weight: 600; color: #2F5546; background: #E7EEEA; padding: 5px 10px; border-radius: 6px">Mindfulness</span>
+            </div>
+            <h2 style="margin: 4px 0 0; font-size: 21px; font-weight: 600; line-height: 1.25; color: #1F2A44">Mindfulness Club</h2>
+            <p style="margin: 0; font-size: 16px; line-height: 1.55">Secular meditation for focus and calm.</p>
+            <p style="margin: auto 0 0; padding-top: 12px; display: flex; align-items: center; gap: 8px; font-size: 15px; color: #5A6172">
+              <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg>
+              Mon and Wed, 12 PM
+            </p>
+            <div style="display: flex; gap: 20px; padding-top: 14px; border-top: 1px solid #E6E8E3; font-size: 15px; font-weight: 600">
+              <a href="#instagram" style="color: #1F2A44; padding: 6px 0">Instagram</a>
+              <a href="#email" style="color: #1F2A44; padding: 6px 0">Email</a>
+            </div>
+          </article>
+        
+          <article data-trad="Mindfulness" data-text="Yoga Collective Mindfulness Free, student-led yoga for all levels." style="display: flex; flex-direction: column; gap: 14px; padding: 28px; border-radius: 12px; background: #FFFFFF">
+            <div style="display: flex; align-items: center; gap: 14px">
+              <span aria-hidden="true" style="flex: 0 0 52px; width: 52px; height: 52px; border-radius: 10px; background: #1F2A44; color: #D2A54A; display: flex; align-items: center; justify-content: center; font-family: 'Cormorant Garamond', Georgia, serif; font-size: 22px; font-weight: 600">YC</span>
+              <span style="font-size: 14px; font-weight: 600; color: #2F5546; background: #E7EEEA; padding: 5px 10px; border-radius: 6px">Mindfulness</span>
+            </div>
+            <h2 style="margin: 4px 0 0; font-size: 21px; font-weight: 600; line-height: 1.25; color: #1F2A44">Yoga Collective</h2>
+            <p style="margin: 0; font-size: 16px; line-height: 1.55">Free, student-led yoga for all levels.</p>
+            <p style="margin: auto 0 0; padding-top: 12px; display: flex; align-items: center; gap: 8px; font-size: 15px; color: #5A6172">
+              <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg>
+              Saturdays, 10 AM
+            </p>
+            <div style="display: flex; gap: 20px; padding-top: 14px; border-top: 1px solid #E6E8E3; font-size: 15px; font-weight: 600">
+              <a href="#instagram" style="color: #1F2A44; padding: 6px 0">Instagram</a>
+              <a href="#email" style="color: #1F2A44; padding: 6px 0">Email</a>
+            </div>
+          </article>
+        
+          <article data-trad="Secular" data-text="Meaning and Philosophy Circle Secular Big questions over coffee." style="display: flex; flex-direction: column; gap: 14px; padding: 28px; border-radius: 12px; background: #FFFFFF">
+            <div style="display: flex; align-items: center; gap: 14px">
+              <span aria-hidden="true" style="flex: 0 0 52px; width: 52px; height: 52px; border-radius: 10px; background: #1F2A44; color: #D2A54A; display: flex; align-items: center; justify-content: center; font-family: 'Cormorant Garamond', Georgia, serif; font-size: 22px; font-weight: 600">MA</span>
+              <span style="font-size: 14px; font-weight: 600; color: #2F5546; background: #E7EEEA; padding: 5px 10px; border-radius: 6px">Secular</span>
+            </div>
+            <h2 style="margin: 4px 0 0; font-size: 21px; font-weight: 600; line-height: 1.25; color: #1F2A44">Meaning and Philosophy Circle</h2>
+            <p style="margin: 0; font-size: 16px; line-height: 1.55">Big questions over coffee.</p>
+            <p style="margin: auto 0 0; padding-top: 12px; display: flex; align-items: center; gap: 8px; font-size: 15px; color: #5A6172">
+              <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg>
+              Every other Tuesday
+            </p>
+            <div style="display: flex; gap: 20px; padding-top: 14px; border-top: 1px solid #E6E8E3; font-size: 15px; font-weight: 600">
+              <a href="#instagram" style="color: #1F2A44; padding: 6px 0">Instagram</a>
+              <a href="#email" style="color: #1F2A44; padding: 6px 0">Email</a>
+            </div>
+          </article>
+        
+          <article data-trad="Other traditions" data-text="Bahá’í Club Other traditions Devotional gatherings and study." style="display: flex; flex-direction: column; gap: 14px; padding: 28px; border-radius: 12px; background: #FFFFFF">
+            <div style="display: flex; align-items: center; gap: 14px">
+              <span aria-hidden="true" style="flex: 0 0 52px; width: 52px; height: 52px; border-radius: 10px; background: #1F2A44; color: #D2A54A; display: flex; align-items: center; justify-content: center; font-family: 'Cormorant Garamond', Georgia, serif; font-size: 22px; font-weight: 600">BC</span>
+              <span style="font-size: 14px; font-weight: 600; color: #2F5546; background: #E7EEEA; padding: 5px 10px; border-radius: 6px">Other traditions</span>
+            </div>
+            <h2 style="margin: 4px 0 0; font-size: 21px; font-weight: 600; line-height: 1.25; color: #1F2A44">Bahá’í Club</h2>
+            <p style="margin: 0; font-size: 16px; line-height: 1.55">Devotional gatherings and study.</p>
+            <p style="margin: auto 0 0; padding-top: 12px; display: flex; align-items: center; gap: 8px; font-size: 15px; color: #5A6172">
+              <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg>
+              Sundays, 4 PM
+            </p>
+            <div style="display: flex; gap: 20px; padding-top: 14px; border-top: 1px solid #E6E8E3; font-size: 15px; font-weight: 600">
+              <a href="#instagram" style="color: #1F2A44; padding: 6px 0">Instagram</a>
+              <a href="#email" style="color: #1F2A44; padding: 6px 0">Email</a>
+            </div>
+          </article>
+        
+      </div>
+
+      <div data-show="empty" hidden>
+        <div style="padding: 56px 32px; border-radius: 12px; background: #FFFFFF; text-align: center">
+          <p style="margin: 0; font-size: 19px; font-weight: 600; color: #1F2A44">No groups match that search.</p>
+          <p style="margin: 8px 0 0; font-size: 16px; color: #5A6172">Try another word, or <a href="#add">add your group</a>.</p>
+        </div>
+      </div>
+
+      <!-- ADD CTA -->
+      <section id="add" aria-labelledby="ga-add" style="margin-top: 64px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 20px 40px; padding: 36px 40px; border-radius: 12px; background: #1F2A44; color: #FFFFFF">
+        <h2 id="ga-add" style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 500; font-size: 34px; line-height: 1.1">Don’t see your group?</h2>
+        <div style="display: flex; flex-wrap: wrap; gap: 12px">
+          <a href="#add-form" style="color: #1F2A44; background: #D2A54A; text-decoration: none; padding: 15px 28px; border-radius: 999px; font-size: 16px; font-weight: 600">Add your group</a>
+          <a href="host-with-us.html" style="color: #FFFFFF; text-decoration: none; padding: 14px 27px; border-radius: 999px; border: 1px solid rgba(255,255,255,0.6); font-size: 16px; font-weight: 500">Book space at the Center</a>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer style="background: #172036; color: #C9CFDB; padding: 64px clamp(20px, 5vw, 72px) 48px">
+    <div style="max-width: 1240px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 40px 80px; justify-content: space-between">
+      <div style="flex: 1 1 300px">
+        <p style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-size: 26px; font-weight: 600; line-height: 1.1; color: #FFFFFF">Center for Spirituality<br>and Dialogue</p>
+        <p style="margin: 20px 0 0; font-size: 16px; line-height: 1.6">2601 Durant Avenue<br>Berkeley, CA 94704<br>Corner of Durant and Bowditch</p>
+      </div>
+      <div style="flex: 0 1 auto; display: flex; flex-direction: column; gap: 4px; font-size: 16px">
+        <a href="our-space.html" style="color: #FFFFFF; text-decoration: none; padding: 6px 0">Our Space</a>
+        <a href="events.html" style="color: #FFFFFF; text-decoration: none; padding: 6px 0">Events</a>
+        <a href="#top" style="color: #FFFFFF; text-decoration: none; padding: 6px 0">Student Groups</a>
+        <a href="our-team.html" style="color: #FFFFFF; text-decoration: none; padding: 6px 0">Our Team</a>
+      </div>
+      <div style="flex: 0 1 auto; display: flex; flex-direction: column; gap: 4px; font-size: 16px">
+        <a href="host-with-us.html" style="color: #FFFFFF; text-decoration: none; padding: 6px 0">Host with us</a>
+        <a href="support-us.html" style="color: #FFFFFF; text-decoration: none; padding: 6px 0">Support us</a>
+        <a href="index.html" style="color: #FFFFFF; text-decoration: none; padding: 6px 0">Subscribe</a>
+      </div>
+      <div style="flex: 0 1 auto; display: flex; flex-direction: column; gap: 4px; font-size: 16px">
+        <a href="mailto:building.for.csd@gmail.com" style="color: #FFFFFF; padding: 6px 0">building.for.csd@gmail.com</a>
+        <a href="https://maps.google.com/?q=2601+Durant+Ave+Berkeley+CA" style="color: #FFFFFF; padding: 6px 0">Get directions</a>
+      </div>
+    </div>
+    <p style="max-width: 1240px; margin: 56px auto 0; padding-top: 24px; border-top: 1px solid #2E3A57; font-size: 14px; color: #9AA3B5">© 2026 Center for Spirituality and Dialogue</p>
+  </footer>
+</div>
+<script>
+(function () {
+  var q = '', cat = 'All';
+  var input = document.getElementById('ga-search');
+  var chips = [].slice.call(document.querySelectorAll('[data-cat]'));
+  var cards = [].slice.call(document.querySelectorAll('[data-trad]'));
+  var count = document.getElementById('ga-count');
+  var empty = document.querySelector('[data-show="empty"]');
+  function apply() {
+    var n = 0;
+    cards.forEach(function (c) {
+      var okCat = cat === 'All' || c.getAttribute('data-trad') === cat;
+      var okQ = !q || c.getAttribute('data-text').toLowerCase().indexOf(q) !== -1;
+      var on = okCat && okQ; c.style.display = on ? 'flex' : 'none'; if (on) n++;
+    });
+    chips.forEach(function (b) { var on = b.getAttribute('data-cat') === cat; b.setAttribute('aria-pressed', on); b.style.background = on ? '#1F2A44' : '#FFFFFF'; b.style.color = on ? '#FFFFFF' : '#1F2A44'; b.style.borderColor = on ? '#1F2A44' : '#C3C9C0'; });
+    count.textContent = n === 1 ? '1 group' : n + ' groups';
+    empty.hidden = n > 0;
+  }
+  input.addEventListener('input', function () { q = input.value.toLowerCase().trim(); apply(); });
+  chips.forEach(function (b) { b.addEventListener('click', function () { cat = b.getAttribute('data-cat'); apply(); }); });
+  apply();
+})();
+(function () {
+  [].slice.call(document.querySelectorAll('form')).forEach(function (f) {
+    f.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var b = f.querySelector('button[type="submit"]');
+      if (b) b.textContent = 'Sign-up opening soon';
+    });
+  });
+})();
+</script>
+</body>
+</html>
